@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advanced OSINT Toolkit</title>
+  <title>Advanced OSINT Framework</title>
   <style>
     body {
       margin: 0;
@@ -17,6 +17,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
     header h1 {
       margin: 0;
@@ -27,6 +28,7 @@
       border-radius: 8px;
       border: none;
       width: 300px;
+      margin-top: 10px;
     }
     .container {
       padding: 2rem;
@@ -63,12 +65,21 @@
     .hidden {
       display: none;
     }
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      input[type="search"] {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Advanced OSINT Toolkit</h1>
+    <h1>Advanced OSINT Framework</h1>
     <input type="search" id="search" placeholder="Search tools..." />
   </header>
 
@@ -79,6 +90,8 @@
         <li><a href="https://www.peekyou.com/" target="_blank">PeekYou</a></li>
         <li><a href="https://pipl.com/" target="_blank">Pipl</a></li>
         <li><a href="https://www.truecaller.com/" target="_blank">TrueCaller</a></li>
+        <li><a href="https://www.spokeo.com/" target="_blank">Spokeo</a></li>
+        <li><a href="https://www.zabasearch.com/" target="_blank">ZabaSearch</a></li>
       </ul>
     </div>
 
@@ -88,6 +101,8 @@
         <li><a href="https://namechk.com/" target="_blank">Namechk (Username Checker)</a></li>
         <li><a href="https://whopostedwhat.com/" target="_blank">WhoPostedWhat</a></li>
         <li><a href="https://tinfoleak.com/" target="_blank">Tinfoleak (Twitter OSINT)</a></li>
+        <li><a href="https://www.social-searcher.com/" target="_blank">Social Searcher</a></li>
+        <li><a href="https://intelx.io/" target="_blank">IntelX</a></li>
       </ul>
     </div>
 
@@ -97,6 +112,8 @@
         <li><a href="https://exif.regex.info/exif.cgi" target="_blank">Exif Viewer</a></li>
         <li><a href="https://fotoforensics.com/" target="_blank">FotoForensics</a></li>
         <li><a href="https://www.images.google.com/" target="_blank">Google Reverse Image</a></li>
+        <li><a href="https://www.tineye.com/" target="_blank">TinEye</a></li>
+        <li><a href="https://www.metapicz.com/" target="_blank">Metapicz</a></li>
       </ul>
     </div>
 
@@ -106,53 +123,7 @@
         <li><a href="https://hunter.io/" target="_blank">Hunter.io</a></li>
         <li><a href="https://emailrep.io/" target="_blank">EmailRep</a></li>
         <li><a href="https://whois.domaintools.com/" target="_blank">DomainTools</a></li>
-      </ul>
-    </div>
-
-    <div class="category">
-      <h2>Phones & Numbers</h2>
-      <ul>
-        <li><a href="https://sync.me/" target="_blank">Sync.me</a></li>
-        <li><a href="https://emobiletracker.com/" target="_blank">EMobileTracker</a></li>
-        <li><a href="https://numverify.com/" target="_blank">NumVerify</a></li>
-      </ul>
-    </div>
-
-    <div class="category">
-      <h2>IP & Geolocation</h2>
-      <ul>
-        <li><a href="https://ipinfo.io/" target="_blank">IPInfo</a></li>
-        <li><a href="https://whatismyipaddress.com/" target="_blank">WhatIsMyIPAddress</a></li>
-        <li><a href="https://geoiptool.com/" target="_blank">GeoIPTool</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <script>
-    const searchInput = document.getElementById("search");
-    const categories = document.querySelectorAll(".category");
-
-    searchInput.addEventListener("input", () => {
-      const query = searchInput.value.toLowerCase();
-
-      categories.forEach(category => {
-        const tools = category.querySelectorAll("li");
-        let visibleTools = 0;
-
-        tools.forEach(tool => {
-          const text = tool.textContent.toLowerCase();
-          if (text.includes(query)) {
-            tool.classList.remove("hidden");
-            visibleTools++;
-          } else {
-            tool.classList.add("hidden");
-          }
-        });
-
-        category.style.display = visibleTools ? "block" : "none";
-      });
-    });
-  </script>
-
-</body>
-</html>
+        <li><a href="https://haveibeenpwned.com/" target="_blank">Have I Been Pwned</a></li>
+        <li><a href="https://www.spytox.com
+::contentReference[oaicite:20]{index=20}
+ 
