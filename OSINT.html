@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced OSINT Toolkit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    header {
+      background: #1e293b;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    input[type="search"] {
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: none;
+      width: 300px;
+    }
+    .container {
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .category {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px #0f172a66;
+    }
+    .category h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 0.4rem 0;
+    }
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Advanced OSINT Toolkit</h1>
+    <input type="search" id="search" placeholder="Search tools..." />
+  </header>
+
+  <div class="container" id="toolContainer">
+    <div class="category">
+      <h2>People Search</h2>
+      <ul>
+        <li><a href="https://www.peekyou.com/" target="_blank">PeekYou</a></li>
+        <li><a href="https://pipl.com/" target="_blank">Pipl</a></li>
+        <li><a href="https://www.truecaller.com/" target="_blank">TrueCaller</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>Social Media</h2>
+      <ul>
+        <li><a href="https://namechk.com/" target="_blank">Namechk (Username Checker)</a></li>
+        <li><a href="https://whopostedwhat.com/" target="_blank">WhoPostedWhat</a></li>
+        <li><a href="https://tinfoleak.com/" target="_blank">Tinfoleak (Twitter OSINT)</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>Images & Metadata</h2>
+      <ul>
+        <li><a href="https://exif.regex.info/exif.cgi" target="_blank">Exif Viewer</a></li>
+        <li><a href="https://fotoforensics.com/" target="_blank">FotoForensics</a></li>
+        <li><a href="https://www.images.google.com/" target="_blank">Google Reverse Image</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>Emails & Domains</h2>
+      <ul>
+        <li><a href="https://hunter.io/" target="_blank">Hunter.io</a></li>
+        <li><a href="https://emailrep.io/" target="_blank">EmailRep</a></li>
+        <li><a href="https://whois.domaintools.com/" target="_blank">DomainTools</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>Phones & Numbers</h2>
+      <ul>
+        <li><a href="https://sync.me/" target="_blank">Sync.me</a></li>
+        <li><a href="https://emobiletracker.com/" target="_blank">EMobileTracker</a></li>
+        <li><a href="https://numverify.com/" target="_blank">NumVerify</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>IP & Geolocation</h2>
+      <ul>
+        <li><a href="https://ipinfo.io/" target="_blank">IPInfo</a></li>
+        <li><a href="https://whatismyipaddress.com/" target="_blank">WhatIsMyIPAddress</a></li>
+        <li><a href="https://geoiptool.com/" target="_blank">GeoIPTool</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const categories = document.querySelectorAll(".category");
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.toLowerCase();
+
+      categories.forEach(category => {
+        const tools = category.querySelectorAll("li");
+        let visibleTools = 0;
+
+        tools.forEach(tool => {
+          const text = tool.textContent.toLowerCase();
+          if (text.includes(query)) {
+            tool.classList.remove("hidden");
+            visibleTools++;
+          } else {
+            tool.classList.add("hidden");
+          }
+        });
+
+        category.style.display = visibleTools ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
